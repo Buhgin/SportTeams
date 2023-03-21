@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-participant-table
+      author: Boris
+      changes:
+        - createTable:
+            tableName: participant
+            columns:
+              - column:
+                  name: id
+                  type: serial8
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: team_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_participant_team
+                    references: teams(id)
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: surname
+                  type: varchar(255)
+              - column:
+                  name: birthday
+                  type: date
+              - column:
+                  name: role
+                  type: varchar(255)
+

@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-teams-table
+      author: Boris
+      changes:
+        - createTable:
+            tableName: teams
+            columns:
+              - column:
+                  name: id
+                  type: serial8
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nameTeam
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: name_sport
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: founding_date
+                  type: date
+                  constraints:
+                    nullable: false
+
+
+
+
